@@ -9,4 +9,9 @@
 
 <hr />
 
-# Retinal Image Prediction
+# Retinal Vessel Segmentation
+
+## Run Code
+```
+$ python3 main.py
+```
