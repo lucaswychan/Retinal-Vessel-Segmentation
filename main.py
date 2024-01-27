@@ -5,8 +5,8 @@ import numpy as np
 import keras
 
 def main():
-    retinal_vessel_data = np.load('retinal_vessel_dataset.npz')
-    implementation_check = np.load('sample_data.npz')
+    retinal_vessel_data = np.load('Data/retinal_vessel_dataset.npz')
+    implementation_check = np.load('Data/sample_data.npz')
     
     x_train_raw = retinal_vessel_data["x_train"][...,np.newaxis]
     y_train = retinal_vessel_data["y_train"][...,np.newaxis].astype(int)
@@ -49,7 +49,7 @@ def main():
     
     print("{:.4f}".format(avg_dice(y_val, val_preds_thresh)))
     
-    model.save('trained_model_snapshot.h5')
+    model.save('Model/trained_model_snapshot.h5')
         
         
 if __name__ == '__main__':
