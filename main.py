@@ -14,6 +14,9 @@ def main():
     x_val_raw = retinal_vessel_data["x_val"][...,np.newaxis]
     y_val = retinal_vessel_data["y_val"][...,np.newaxis].astype(int)
     
+    x_test = retinal_vessel_data["x_test"][...,np.newaxis]
+    print("shape of x_test = ", x_test.shape)
+    
     x_train_enhanced = contrast_stretch(x_train_raw)
     x_val_enhanced = contrast_stretch(x_val_raw)
     
@@ -27,7 +30,9 @@ def main():
     model = build_model() # Build new model with newly initialized weights
     model.summary()
     compile_model(model, learning_rate)
-    train_model(model, num_epochs, x_train, y_train, x_val, y_val)
+    history = train_model(model, num_epochs, x_train, y_train, x_val, y_val)
+    
+    plot_acc_loss(history)
 
     val_preds = predict_model(model, x_val)
     
@@ -39,14 +44,11 @@ def main():
     visualize_side_by_3(x_val[12,...], 'image', y_val[12,...], 'label', val_preds_thresh[12,...], 'predicted (after threshold)', "12_image_after_thresh", (0,1),(0,1),(0,1))
     visualize_side_by_3(x_val[112,...], 'image', y_val[112,...], 'label', val_preds_thresh[112,...], 'predicted (after threshold)', "112_image_after_thresh", (0,1),(0,1),(0,1))
     
-    sample_img = implementation_check['sample_img'] 
-    sample_label = implementation_check['sample_label']
-    sample_pred = implementation_check['sample_pred_hard']
-
-    visualize_side_by_3(sample_img, 'image', sample_label, 'label', sample_pred, 'predicted', "sample_image", (0,255),(0,1),(0,1))
-    print("Dice coefficient: {:.4f}".format(dice_coef(sample_label, sample_pred)))
     
-    print("{:.4f}".format(avg_dice(y_val, val_preds_thresh)))
+    print("Predicted Result: {:.4f}".format(avg_dice(y_val, val_preds_thresh)))
+    
+    y_test_pred = predict_model(model, x_test)
+    print(y_test_pred.shape)
     
     model.save('Model/trained_model_snapshot.h5')
         

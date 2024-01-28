@@ -81,13 +81,11 @@ def compile_model(model, lr):
     """
     
     optimizer = keras.optimizers.Adam(learning_rate=lr)
-    model.compile(optimizer=optimizer, loss='binary_crossentropy')
+    model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
 
 
 def train_model(model, epochs, x_train, y_train, x_val, y_val):
     """Train the model according to the description above.
-    NOTE: Please return your `model.fit(...)` call
-    for us to grade.
 
     Parameters
     ----------
@@ -104,7 +102,7 @@ def train_model(model, epochs, x_train, y_train, x_val, y_val):
     -------
     """
 
-    model.fit(x_train, y_train, epochs=epochs, batch_size=16, validation_data=(x_val, y_val), validation_batch_size=16)
+    return model.fit(x_train, y_train, epochs=epochs, batch_size=16, validation_data=(x_val, y_val), validation_batch_size=16)
 
 
 def predict_model(model, x_val):
