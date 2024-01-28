@@ -19,6 +19,13 @@ Autoencoder, or an "hourglass" model, is a simple extension of the previously me
 
 Autoencoder architecture is used to build a model that can learn to produce a segmentation mask from the input image. Intuitively, the output of the autoencoder is expected to be the predicted segmentation mask. During training, the loss will be computed between the real label mask and the predicted mask.
 
+## Train Accuracy
+<div align="center">
+  <a href="model.py">
+	  <img src="Image/model_accuracy.png" width="600" height="500">
+  </a>
+</div>
+
 ## Run Code
 ```
 $ python3 main.py
