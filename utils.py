@@ -122,6 +122,17 @@ def avg_dice(y_val, val_preds_thresh):
     return average_dice
 
 
+def plot_acc_loss(history):
+    plt.plot(history.history['accuracy'])  # train accuracy
+    plt.plot(history.history['val_accuracy'])   # validation accuracy
+    plt.title('model accuracy')
+    plt.ylabel('accuracy')
+    plt.xlabel('epoch')
+    plt.grid()
+    plt.legend(['train', 'val'], loc='lower right')
+    plt.savefig("Image/%s.png" % "model_accuracy", dpi=1000, bbox_inches="tight")
+
+
 if __name__ == "__main__":
     retinal_vessel_data = np.load("retinal_vessel_dataset.npz")
     implementation_check = np.load("sample_data.npz")
