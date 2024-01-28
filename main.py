@@ -45,7 +45,6 @@ def main():
 
     visualize_side_by_3(sample_img, 'image', sample_label, 'label', sample_pred, 'predicted', "sample_image", (0,255),(0,1),(0,1))
     print("Dice coefficient: {:.4f}".format(dice_coef(sample_label, sample_pred)))
-    print("Expected dice coefficient between sample label and sample predicted mask should be 0.7689")
     
     print("{:.4f}".format(avg_dice(y_val, val_preds_thresh)))
     
