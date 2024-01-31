@@ -11,6 +11,10 @@
 
 # Retinal Vessel Segmentation
 
+## Introduction
+Implementing an Autuencoder architecture neural network for segmentation of cropped patches of the grayscaled retinal image
+
+
 ## Autoencoder
 ![autoencoder](/Image/autoencoder.png)
 
@@ -19,7 +23,7 @@ Autoencoder, or an "hourglass" model, is a simple extension of the previously me
 
 Autoencoder architecture is used to build a model that can learn to produce a segmentation mask from the input image. Intuitively, the output of the autoencoder is expected to be the predicted segmentation mask. During training, the loss will be computed between the real label mask and the predicted mask.
 
-## Train Accuracy
+## Result
 <div align="center">
   <a href="model.py">
 	  <img src="Image/model_accuracy.png" width="600" height="500">
