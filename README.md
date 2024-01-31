@@ -26,7 +26,7 @@ Autoencoder architecture is used to build a model that can learn to produce a se
 ## Result
 <div align="center">
   <a href="model.py">
-	  <img src="Image/model_accuracy.png" width="600" height="500">
+	  <img src="Image/result.png">
   </a>
 </div>
 
