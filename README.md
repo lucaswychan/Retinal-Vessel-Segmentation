@@ -18,7 +18,7 @@ Implementing an Autuencoder architecture neural network for segmentation of crop
 ## Autoencoder
 ![autoencoder](/Image/autoencoder.png)
 
-Autoencoder, or an "hourglass" model, is a simple extension of the previously mentioned image classification model. The process of obtaining the compressed feature shares the same concept of abstraction path introduced in the classification model. The compressed feature is then propagated to the expansion path, which de-compresses the compressed feature back to the spatial representation of the image. In this arrangement, the compressed feature is often called the "Bottleneck" feature.
+Autoencoder, or an "hourglass" model, is a simple extension of the image classification model. The process of obtaining the compressed feature shares the same concept of abstraction path introduced in the classification model. The compressed feature is then propagated to the expansion path, which de-compresses the compressed feature back to the spatial representation of the image. In this arrangement, the compressed feature is often called the "Bottleneck" feature.
 
 
 Autoencoder architecture is used to build a model that can learn to produce a segmentation mask from the input image. Intuitively, the output of the autoencoder is expected to be the predicted segmentation mask. During training, the loss will be computed between the real label mask and the predicted mask.
