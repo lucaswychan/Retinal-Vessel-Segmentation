@@ -12,7 +12,7 @@
 # Retinal Vessel Segmentation
 
 ## Introduction
-Implementing an Autuencoder architecture neural network for segmentation of cropped patches of the grayscaled retinal image
+Implementing an Autoencoder architecture neural network for segmentation of cropped patches of the grayscaled retinal image
 
 
 ## Autoencoder
