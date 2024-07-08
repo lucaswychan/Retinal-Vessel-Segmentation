@@ -1,13 +1,10 @@
 <div align="center">
-  <a href="https://github.com/tensorflow/tensorflow">
-    <img src="https://img.shields.io/badge/TensorFlow-FF8000?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow">
-  </a>
-  <a href="https://keras.io/">
-    <img src="https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white" alt"Keras">
-  </a>
+
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-FF8000?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/tensorflow/tensorflow)
+[![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)](https://keras.io/)
+[![Autoencoder](https://img.shields.io/badge/Autoencoder-66B2FF.svg?style=for-the-badge&logoColor=white)](https://en.wikipedia.org/wiki/Autoencoder)
 </div>
 
-<hr />
 
 # Retinal Vessel Segmentation
 
@@ -23,14 +20,14 @@ Autoencoder, or an "hourglass" model, is a simple extension of the image classif
 
 Autoencoder architecture is used to build a model that can learn to produce a segmentation mask from the input image. Intuitively, the output of the autoencoder is expected to be the predicted segmentation mask. During training, the loss will be computed between the real label mask and the predicted mask.
 
-## Result
-<div align="center">
-  <a href="model.py">
-	  <img src="Image/result.png">
-  </a>
-</div>
 
-## Run Code
+## Instruction
 ```
 $ python3 main.py
 ```
+
+
+## Result
+[![Model Result](Image/result.png)](model.py)
+
+
